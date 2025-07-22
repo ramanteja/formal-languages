@@ -1,0 +1,10 @@
+bison -d add.y
+flex addlex.l
+gcc -o calc add.tab.c lex.yy.c -lfl -lm
+./calc
+
+
+bison -d translate.y
+flex translate.l
+gcc -o translator translate.tab.c lex.yy.c -lfl
+./translator
